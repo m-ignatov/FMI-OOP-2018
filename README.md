@@ -1,2 +1,2 @@
-# FMI-OOP-2018
+# C++ Object-Oriented Programming course
 University-related work
