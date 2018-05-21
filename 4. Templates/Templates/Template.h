@@ -1,7 +1,6 @@
 #pragma once
 #include <algorithm>
 
-// Пресмята медианата на колекцията.
 template<typename T>
 T median(T* collection, int size)
 {
@@ -13,7 +12,6 @@ T median(T* collection, int size)
 	return med;
 }
 
-// Пресмята модата на колекцията.
 template<typename T>
 T mode(T* collection, int size)
 {
@@ -38,7 +36,6 @@ T mode(T* collection, int size)
 	return mode;
 }
 
-// Пресмята средно аритметичното на колекцията
 template<typename T>
 T average(T* collection, int size)
 {
@@ -53,7 +50,6 @@ T average(T* collection, int size)
 	return avg;
 }
 
-// Сумира всички елементи на колекцията с оператор +
 template<typename T>
 T accumulates(T* collection, int size)
 {
@@ -66,7 +62,6 @@ T accumulates(T* collection, int size)
 	return sum;
 }
 
-//Връща максималния елемент в колекцията. Трябва да работи за всички типове с имплементиран оператор <
 template<typename T>
 T max(T* collection, int size)
 {
@@ -79,7 +74,6 @@ T max(T* collection, int size)
 	return max;
 }
 
-//Връща минималния елемент в колекцията. Трябва да работи за всички типове с имплементиран оператор <
 template<typename T>
 T min(T* collection, int size)
 {
@@ -92,7 +86,7 @@ T min(T* collection, int size)
 	return min;
 }
 
-// Връща нова колекция, в която са записани елементите на подадената, но в обратен ред
+
 template<typename T>
 T* reverse(T* collection, int size)
 {
@@ -105,7 +99,7 @@ T* reverse(T* collection, int size)
 	return newCol;
 }
 
-// Връща нова колекция, която съдържа само първите n елемента от подадената.
+
 template<typename T>
 T* take(T* collection, int size, int n)
 {
@@ -118,7 +112,7 @@ T* take(T* collection, int size, int n)
 	return newCol;
 }
 
-// Връща нова колекция, която съдържа всички елементи от подадената, с изключение на първите n
+
 template<typename T>
 T* skip(T* collection, int size, int n)
 {
