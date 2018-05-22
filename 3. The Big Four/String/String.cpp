@@ -9,19 +9,22 @@ String::String() : size(0)
 
 String::String(const char *str)
 {
-	setString(str);
+	size = strlen(str);
+	data = new char[size + 1];
+	strcpy(data, str);
 }
 
 String::String(const String &rhs)
 {
-	setString(rhs.getString());
+	size = strlen(rhs.getString());
+	data = new char[size + 1];
+	strcpy(data, rhs.getString());
 }
 
 String & String::operator=(const String &rhs)
 {
 	if (this != &rhs)
 	{
-		delete[] data;
 		setString(rhs.getString());
 	}
 	return *this;
@@ -98,6 +101,7 @@ size_t String::getSize() const
 
 void String::setString(const char *str)
 {
+	delete[] data;
 	size = strlen(str);
 	data = new char[size + 1];
 	strcpy(data, str);

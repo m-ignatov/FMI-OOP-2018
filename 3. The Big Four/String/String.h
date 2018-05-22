@@ -19,13 +19,13 @@ public:
 	size_t getSize() const;
 	const char* getString() const;
 	void setString(const char*);
-	void setSize(const size_t&);
 
 private:
 	char* data;
 	size_t size;
 
 	bool empty() const;
+	void setSize(const size_t&);
 	size_t strlen(const char*) const;
 	void strcpy(char*, const char*);
 };
