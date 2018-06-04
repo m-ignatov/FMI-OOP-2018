@@ -56,24 +56,30 @@ ElectricNet & ElectricNet::operator+(const ElectricDevice &rhs)
 	return *this;
 }
 
-void ElectricNet::operator++()
+ElectricNet& ElectricNet::operator++()
 {
 	maxConsumption *= 2;
+	return *this;
 }
 
-void ElectricNet::operator++(int)
+ElectricNet& ElectricNet::operator++(int)
 {
+	ElectricNet tmp(*this);
 	operator++();
+	return tmp;
 }
 
-void ElectricNet::operator--()
+ElectricNet& ElectricNet::operator--()
 {
 	if (curConsumption >= 2 * maxConsumption) maxConsumption /= 2;
+	return *this;
 }
 
-void ElectricNet::operator--(int)
+ElectricNet& ElectricNet::operator--(int)
 {
+	ElectricNet tmp(*this);
 	operator--();
+	return tmp;
 }
 
 ElectricNet & ElectricNet::operator+=(const ElectricDevice &rhs)

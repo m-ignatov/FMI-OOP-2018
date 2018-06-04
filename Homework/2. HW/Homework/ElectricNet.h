@@ -18,10 +18,10 @@ public:
 	ElectricNet& operator= (const ElectricNet&);
 	
 	bool operator! ();
-	void operator++ ();
-	void operator++ (int);
-	void operator-- ();
-	void operator-- (int);
+	ElectricNet& operator++ ();
+	ElectricNet& operator++ (int);
+	ElectricNet& operator-- ();
+	ElectricNet& operator-- (int);
 	ElectricNet& operator+ (const ElectricDevice&);
 	ElectricNet& operator+= (const ElectricDevice&);
 	ElectricNet& operator- (const ElectricDevice&);
