@@ -62,7 +62,7 @@ ElectricNet& ElectricNet::operator++()
 	return *this;
 }
 
-ElectricNet& ElectricNet::operator++(int)
+ElectricNet ElectricNet::operator++(int)
 {
 	ElectricNet tmp(*this);
 	operator++();
@@ -75,7 +75,7 @@ ElectricNet& ElectricNet::operator--()
 	return *this;
 }
 
-ElectricNet& ElectricNet::operator--(int)
+ElectricNet ElectricNet::operator--(int)
 {
 	ElectricNet tmp(*this);
 	operator--();

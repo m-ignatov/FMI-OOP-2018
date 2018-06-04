@@ -19,9 +19,9 @@ public:
 	
 	bool operator! ();
 	ElectricNet& operator++ ();
-	ElectricNet& operator++ (int);
+	ElectricNet operator++ (int);
 	ElectricNet& operator-- ();
-	ElectricNet& operator-- (int);
+	ElectricNet operator-- (int);
 	ElectricNet& operator+ (const ElectricDevice&);
 	ElectricNet& operator+= (const ElectricDevice&);
 	ElectricNet& operator- (const ElectricDevice&);
