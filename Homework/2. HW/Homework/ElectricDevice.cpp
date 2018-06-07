@@ -4,24 +4,25 @@
 
 ElectricDevice::ElectricDevice() : consumption(0)
 {
-	setName("");
+	name = new char{ '\0' };
 }
 
 ElectricDevice::ElectricDevice(const char * _name, const unsigned int & _consumption) : consumption(_consumption)
 {
-	setName(_name);
+	name = new char[strlen(_name) + 1];
+	strcpy(name, _name);
 }
 
 ElectricDevice::ElectricDevice(const ElectricDevice &rhs) : consumption(rhs.getConsumption())
 {
-	setName(rhs.getName());
+	name = new char[strlen(rhs.getName()) + 1];
+	strcpy(name, rhs.getName());
 }
 
 ElectricDevice & ElectricDevice::operator=(const ElectricDevice &rhs)
 {
 	if (this != &rhs)
 	{
-		delete[] name;
 		setName(rhs.getName());
 		consumption = rhs.getConsumption();
 	}
@@ -40,6 +41,7 @@ const char * ElectricDevice::getName() const
 
 void ElectricDevice::setName(const char * _name)
 {
+	delete[] name;
 	name = new char[strlen(_name) + 1];
 	strcpy(name, _name);
 }

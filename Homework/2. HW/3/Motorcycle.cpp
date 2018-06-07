@@ -4,25 +4,27 @@
 
 Motorcycle::Motorcycle() : Vehicle()
 {
-	setType("");
+	type = new char{ '\0' };
 }
 
 Motorcycle::Motorcycle(const Motorcycle & rhs) : Vehicle(rhs)
 {
-	setType(rhs.type);
+	this->type = new char[strlen(rhs.type) + 1];
+	strcpy(this->type, rhs.type);
 }
 
 Motorcycle::Motorcycle(const char *make, const char *model, const char *color, const int &year, const int &mileage, const char* type) : Vehicle(make, model, color, year, mileage)
 {
-	setType(type);
+	this->type = new char[strlen(type) + 1];
+	strcpy(this->type, type);
 }
 
 Motorcycle & Motorcycle::operator=(const Motorcycle & rhs)
 {
 	Vehicle::operator=(rhs);
+
 	if (this != &rhs)
 	{
-		delete[] type;
 		setType(rhs.type);
 	}
 	return *this;
@@ -35,6 +37,7 @@ Motorcycle::~Motorcycle()
 
 void Motorcycle::setType(const char * type)
 {
+	delete[] this->type;
 	this->type = new char[strlen(type) + 1];
 	strcpy(this->type, type);
 }

@@ -21,7 +21,7 @@ Truck & Truck::operator=(const Truck & rhs)
 	return *this;
 }
 
-Truck::~Truck() { std::cout << "~Truck"; }
+Truck::~Truck() {}
 
 void Truck::details() const
 {

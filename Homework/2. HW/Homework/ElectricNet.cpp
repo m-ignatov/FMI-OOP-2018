@@ -24,6 +24,7 @@ ElectricNet::ElectricNet(const ElectricNet &rhs)
 	curConsumption = rhs.getCurConsumption();
 	maxConsumption = rhs.getMaxConsumption();
 	maxSize = rhs.getMaxSize();
+	size = rhs.getSize();
 	cluster = new ElectricDevice[rhs.getSize()];
 
 	for (size_t i = 0; i < rhs.getSize(); i++)
